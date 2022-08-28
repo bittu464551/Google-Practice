@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Solution{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int test=sc.nextInt();
+        int i=1;
+        while(i<=test){
+            int total_candy=0;
+            int num_bag=sc.nextInt();
+            int num_kid=sc.nextInt();
+            int bages[]=new int[num_bag];
+            for(int m=0;m<num_bag;m++){
+                bages[m]=sc.nextInt();
+            }
+            for(int j=0;j<bages.length;j++){
+                total_candy+=bages[j];
+                total_candy=total_candy%num_kid;
+            }
+            
+            System.out.println("Case #"+i+": "+total_candy);
+            i++;
+        }
+    }
+}
